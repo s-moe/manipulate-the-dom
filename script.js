@@ -13,30 +13,62 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.querySelector('#quote-of-the-day').textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
   };
   randomQuote();
-  
-  // Do all of your work inside the document.addEventListener  
+
+  // Do all of your work inside the document.addEventListener
 
   // Part 1
+  const main = function() {
+    document.getElementById('main-title').innerHTML = 'DOM\'s website';
 
+  }
+  main()
 
   // Part 2
 
-
+  const body = function() {
+    document.querySelector('body').style.backgroundColor = 'blue';
+  }
+  body()
   // Part 3
 
-
+  const domsFavoriteThings = function() {
+    const list = document.getElementById('favorite-things');
+    list.removeChild(list.lastElementChild)
+  }
+  domsFavoriteThings()
   // Part 4
-
+  const special = function() {
+    const specialTitle = document.querySelectorAll('special-title');
+    for (let title of specialTitle) {
+      title.style.fontSize = '2rem';
+    }
+  }
+  special()
 
   // Part 5
-
+  const past = function() {
+    const race = document.querySelector('#past-races');
+    race.removeChild(race.childNodes[7])
+    console.log(race.childNodes)
+  }
+  past()
 
   // Part 6
-
-
+  const addedRace = function() {
+    const newRace = document.createElement('li');
+    const pastRaces = document.querySelector('#past-races');
+    newRace.innerHTML = 'Seattle';
+    pastRaces.append(newRace)
+  }
+  addedRace()
   // Part 7
-
-
+  const blog = function(){
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('.blog-post');
+    const newH2 = document.createElement('h2').innerHTML = 'Some more info';
+    console.log(newH2)
+  }
+  blog()
   // Part 8
 
 
