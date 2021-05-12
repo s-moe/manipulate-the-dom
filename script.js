@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Part 2
 
   const body = function() {
-    document.querySelector('body').style.backgroundColor = 'blue';
+    document.querySelector('body').style.backgroundColor = 'lightblue';
   }
   body()
   // Part 3
@@ -63,20 +63,33 @@ document.addEventListener("DOMContentLoaded", function(event) {
   addedRace()
   // Part 7
   const blog = function(){
-    const domsAdventures = document.querySelector('#dom-adventures');
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('.blog-post');
-    const newH2 = document.createElement('h2').innerHTML = 'Wellington';
-    newDiv.append(newH2);
-    const newP = document.createElement('p').innerHTML = 'Driving in Wellington is insane!';
-    newDiv.append(newP);
 
-    domsAdventures.appendChild(newDiv)
-    // domsAdventures.appendChild(newDiv);
-    // console.log (newDiv)
-    // const blogPost =
+
+  const mainClass = document.getElementsByClassName('main')
+  const newDiv = document.createElement('div');
+  const newH2 = document.createElement('h2').innerHTML = 'Wellington';
+  newDiv.append(newH2);
+  const lineB = document.createElement('br');
+  newDiv.append(lineB);
+  const newP = document.createElement('p').innerHTML = 'Driving in Wellington is insane!';
+  newDiv.append(newP);
+    //
+    mainClass[0].appendChild(newDiv);
+
+  // const domsAdventures = document.querySelector('#dom-adventures');
+  //
+  // const newDiv = document.createElement('div');
+  // const newH2 = document.createElement('h2').innerHTML = 'Wellington';
+  // newDiv.append(newH2);
+  // const newP = document.createElement('p').innerHTML = 'Driving in Wellington is insane!';
+  // newDiv.append(newP);
+  //   //
+  //   domsAdventures.appendChild(newDiv); //this shows up at the top
+
+
   }
-  blog() //Not working - it's at the top of the list.
+
+  blog() //Not working properly - do I need a purple square? Also the instructions say to put in an h2, but all of the others are in h1.
   // Part 8
 
 
@@ -90,31 +103,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
     })
   }
   click()
-  // Part 9
-  // const toggleColor = function(){
-    // const blogsColor = document.querySelectorAll('.blog-post');
-    // blogsColor.addEventListener('mouseout', function (event){
-    //   event.target.style.color = "orange";
-    // });
+// // Part 9
+//.classList and method .toggle()
+//for of to iterate through
 
-      // const blogsColor = document.querySelectorAll('.blog-post');
-      //
-      // blogsColor.addEventListener('mouseout', function(event){
-      //   event.target.style.color = 'purple'
-      // })
-      const blogsColor = document.querySelectorAll('.blog-post');
-      console.log(blogsColor)
 
-      // document.querySelectorAll('.blog-post').addEventListener('mouseout', out());
-      // blogsColor.addEventListener('mouseout', out());
+const switchColor = function() {
+  const blogPosts = document.querySelectorAll('.blog-post');
+  for (let words of blogPosts){
+    words.addEventListener('mouseout', (evt) => {
+      words.classList.toggle('purple');
+    })
+    words.addEventListener('mouseenter', (evt) => {
+      words.classList.toggle('red');
+    })
+  }
 
-      // function out() {
-      //   blogsColor.style.color = "purple";
-      // }
-
-      // function out() {
-      //   document.querySelectorAll('.blog-post').style.color = "purple";
-      // }
-
-  // }
-  // toggleColor()
+}
+switchColor()
+// Don't touch these! Seriously, Sarah. Don't.
+});
