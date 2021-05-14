@@ -61,20 +61,52 @@ document.addEventListener("DOMContentLoaded", function(event) {
     pastRaces.append(newRace)
   }
   addedRace()
+
   // Part 7
+
+  //Create a new .blog-post corresponding to the new city added in Part 6.
+  //You will have to create a new <div>with class of .blog-post,
+  //a new <h2>with text, and a new <p>with some text.
+  //Think about what order you want to create the elements,
+  //and what order you want to append them in.
   const blog = function(){
 
 
-  const mainClass = document.getElementsByClassName('main')
-  const newDiv = document.createElement('div');
-  const newH2 = document.createElement('h2').innerHTML = 'Wellington';
-  newDiv.append(newH2);
-  const lineB = document.createElement('br');
-  newDiv.append(lineB);
-  const newP = document.createElement('p').innerHTML = 'Driving in Wellington is insane!';
+//main is where the blog-posts seem to live. Am I wrong?
+  let mainClass = document.getElementsByClassName('main')
+  let newDiv = document.createElement('div')
+  let newH1 = document.createElement('h1');
+  newH1.innerHTML = 'Wellington';
+  newDiv.append(newH1);
+  newDiv.classList.add('blog-post');
+  newDiv.classList.add('purple');
+  // const lineB = document.createElement('br');
+  // newDiv.append(lineB);
+  const newP = document.createElement('p');
+  newP.innerHTML = 'I drove through a moving ferry and landed on a speedboat!';
   newDiv.append(newP);
+
+  mainClass[0].appendChild(newDiv);
+
+
+  // console.log(newDiv)
+  //******
+
+  // newH1.setAttribute('class','.blog-post');
+
+  //can I create a new element on main?
+
+
+  // const newH1 = document.createElement('h1').innerHTML = 'Wellington';
+  //
+  // newDiv.append(newH1);
+
+
+
+
+
     //
-    mainClass[0].appendChild(newDiv);
+    // mainClass[0].appendChild(newDiv);
 
   // const domsAdventures = document.querySelector('#dom-adventures');
   //
